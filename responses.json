@@ -1,7 +1,7 @@
 {
   "waze": {
     "Find Navigation History": "If you want more detailed information such as times/start/end locations, you can find it in your navigation history:\\n\\n1. In Waze, tap on the top left corner with the three lines (looks like a hamburger)\\n2. Tap on Settings\\n3. Scroll down to Privacy\\n4. Under the Activity section, tap on \"Navigation history\"\\n",
-    "Allow Auto Dim": "If you want the screen to turn off automatically, you can enable auto-locking/dimming of the screen:\\n\\n1. In the Waze app, tap on the three lines in the top left corner\\n2. Tap on Settings\\n3. Tap on General\\n4. Uncheck \"Prevent auto-lock\"\\n",
-    "Report App Issue": "If you experience a bug or an issue with the app, you can report it by doing the following:\\n\\n1. In the Waze app, tap on the three lines in the top left corner\\n2. Tap on Help and feedback\\n3. Tap on Report an issue\\n"
+    "Allow Auto Dim": "If you want the screen to turn off automatically, you can enable auto-locking/dimming of the screen:\\n\\n1. In the Waze app, tap on the three lines in the top left corner (looks like a hamburger)\\n2. Tap on Settings\\n3. Tap on General\\n4. Uncheck \"Prevent auto-lock\"\\n",
+    "Report App Issue": "If you experience a bug or an issue with the app, you can report it by doing the following:\\n\\n1. In the Waze app, tap on the three lines in the top left corner (looks like a hamburger)\\n2. Tap on Help and feedback\\n3. Tap on Report an issue\\n"
   }
 }

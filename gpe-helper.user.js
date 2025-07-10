@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         GPE Helper
 // @namespace    https://github.com/gncnpk/GPE-Helper
-// @version      0.0.3
+// @version      0.0.4
 // @description  Adds quality-of-life features for Google Product Experts.
 // @author       Gavin Canon-Phratsachack (https://github.com/gncnpk)
-// @match        https://support.google.com/*/thread/*
+// @match        https://support.google.com/*/thread*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=productexperts.withgoogle.com
 // @grant        GM_xmlhttpRequest
 // @license      MIT
 // @connect      raw.githubusercontent.com
 // @connect      github.com
+// @downloadURL https://update.greasyfork.org/scripts/541975/GPE%20Helper.user.js
+// @updateURL https://update.greasyfork.org/scripts/541975/GPE%20Helper.meta.js
 // ==/UserScript==
 
 (function() {
@@ -58,7 +60,10 @@
     }
 
     function savePosition(x, y) {
-        localStorage.setItem(POSITION_KEY, JSON.stringify({ x, y }));
+        localStorage.setItem(POSITION_KEY, JSON.stringify({
+            x,
+            y
+        }));
     }
 
     function loadPosition() {
@@ -66,7 +71,10 @@
         if (saved) {
             return JSON.parse(saved);
         }
-        return { x: 20, y: 20 }; // Default position (top-right)
+        return {
+            x: 20,
+            y: 20
+        }; // Default position (top-right)
     }
 
     function saveCollapsedState(isCollapsed) {
@@ -396,7 +404,9 @@
             insertHtmlAtCursor(editor, htmlToInsert);
 
             // Trigger input event to ensure the content is recognized
-            const event = new Event('input', { bubbles: true });
+            const event = new Event('input', {
+                bubbles: true
+            });
             editor.dispatchEvent(event);
         }
     }
@@ -419,7 +429,14 @@
         } catch (error) {
             console.error('Failed to load responses:', error);
         }
-
+        if (document.location.pathname.endsWith("threads")) {
+            await waitForElm('.thread-list-counts__count--reply', document);
+            document.querySelectorAll(".thread-list-counts__count--reply").forEach((a) => {
+                if (a.innerText === "0 Replies") {
+                    a.parentElement.parentElement.parentElement.parentElement.style = "background-color: rgba(255,0,0,0.1);"
+                }
+            })
+        }
         await waitForElm('.scTailwindSharedRichtexteditoreditor', document);
         prefillResponse();
         createTemplatePanel();

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GPE Helper
 // @namespace    https://github.com/gncnpk/GPE-Helper
-// @version      0.0.4
+// @version      0.0.5
 // @description  Adds quality-of-life features for Google Product Experts.
 // @author       Gavin Canon-Phratsachack (https://github.com/gncnpk)
 // @match        https://support.google.com/*/thread*
@@ -453,7 +453,7 @@
             'scTailwindSharedRichtexteditoreditor'
         )[0];
 
-        editor.innerText = `Good ${timeOfDay} ${username},\n\n[Response here]\n\nIf there's anything else I can assist you with, please let me know!\n\nI'm not affiliated with either Waze or Google; I'm a volunteer product expert providing answers about Google Maps and Waze.`;
+        editor.innerText = `Good ${timeOfDay} ${username},\n\nWaze staff does not monitor this forum.\n\n[Response here]\n\nIf there's anything else I can assist you with, please let me know!\n\nI'm not affiliated with either Waze or Google; I'm a volunteer product expert providing answers about Google Maps and Waze.`;
     }
 
     init();
